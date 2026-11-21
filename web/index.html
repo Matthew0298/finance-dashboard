@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Strict CSP (ADR-0001): everything comes from this origin; no inline styles or scripts. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <title>Finance Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M6 22l7-8 5 5 8-10' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#view">Vai al contenuto</a>
+  <header class="top">
+    <div class="wrap bar">
+      <h1>Finance Dashboard</h1>
+      <div id="status" class="status" aria-live="polite"></div>
+    </div>
+    <nav class="wrap" aria-label="Sezioni"><div id="nav" role="tablist" class="tabs"></div></nav>
+  </header>
+  <div class="wrap" id="banner"></div>
+  <main class="wrap" id="view" tabindex="-1"><p class="muted">Caricamento…</p></main>
+  <footer class="wrap foot">
+    <p><strong>Strumento personale a scopo informativo.</strong> Non è consulenza finanziaria, fiscale o legale né un invito a investire. Le stime e gli scenari possono essere sbagliati e il passato non garantisce il futuro. Le informazioni fiscali vanno verificate con fonti ufficiali o con un professionista abilitato. Il tuo portafoglio resta in questo browser e non viene inviato a nessuno.</p>
+  </footer>
+  <noscript><div class="wrap"><p>Questa pagina richiede JavaScript per mostrare i dati.</p></div></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

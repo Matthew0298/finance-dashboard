@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "note": "Regole fiscali e burocratiche per investire in Italia. Livelli di verifica: primaria = letta su fonte ufficiale; secondaria = concordano più fonti non ufficiali; da_verificare = fonte singola, discordante o conoscenza generale non controllata. Non è consulenza fiscale.",
+  "rules": [
+    {
+      "id": "fisco.aliquote_base",
+      "area": "fisco",
+      "title": "Aliquota ordinaria del 26%",
+      "summary": "Dividendi, cedole, proventi di fondi/ETF e plusvalenze finanziarie sono tassati al 26%.",
+      "applies_to": ["azione", "etf_ucits", "etc_etn", "obbl_corporate", "fondo"],
+      "verification": "secondaria",
+      "source": {"label": "Fiscoinvestimenti - Investimenti e fiscalita 2026", "url": "https://fiscoinvestimenti.it/investimenti-fiscalita-2026-guida-completa/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.titoli_stato",
+      "area": "fisco",
+      "title": "Titoli di Stato al 12,5%",
+      "summary": "Cedole e plusvalenze su titoli di Stato italiani, di Paesi in white list e di enti sovranazionali sono tassate al 12,5%.",
+      "applies_to": ["titolo_stato"],
+      "verification": "secondaria",
+      "source": {"label": "Gestione del Denaro - Tassazione degli investimenti 2026", "url": "https://www.gestionedeldenaro.it/tassazione-degli-investimenti-2026/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.etf_redditi_capitale",
+      "area": "fisco",
+      "title": "ETF e fondi armonizzati: guadagni = redditi di capitale",
+      "summary": "Il guadagno su ETF/fondi UCITS è reddito di capitale: tassato per intero al 26% e non compensabile con minusvalenze. La perdita su ETF è invece una minusvalenza (reddito diverso): può compensare plusvalenze da azioni, obbligazioni o ETC, non guadagni da ETF.",
+      "applies_to": ["etf_ucits", "fondo"],
+      "verification": "secondaria",
+      "source": {"label": "Moneyviz - Tassazione ETF 2026", "url": "https://blog.moneyviz.it/tassazione-etf-2026-plusvalenze-minusvalenze-730-modello-redditi/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.etf_quota_titoli_pubblici",
+      "area": "fisco",
+      "title": "Quota di titoli pubblici negli ETF",
+      "summary": "La parte di proventi riferibile a titoli di Stato dovrebbe essere tassata al 12,5% pro quota. Le fonti sono discordi per gli ETF UCITS esteri (una indica il 26% pieno): verifica con il broker e con un commercialista.",
+      "applies_to": ["etf_ucits", "fondo"],
+      "verification": "da_verificare",
+      "source": {"label": "Rankia - Tassazione degli ETF in Italia", "url": "https://rankia.it/tassazione-degli-etf-in-italia/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.redditi_diversi",
+      "area": "fisco",
+      "title": "Azioni, obbligazioni, certificati: redditi diversi",
+      "summary": "Le plusvalenze su azioni, obbligazioni e certificati sono redditi diversi e si compensano con le minusvalenze della stessa natura.",
+      "applies_to": ["azione", "obbl_corporate"],
+      "verification": "secondaria",
+      "source": {"label": "Fiscoinvestimenti - Plusvalenze e minusvalenze", "url": "https://fiscoinvestimenti.it/plusvalenze-minusvalenze-investimenti-come-funzionano-2026/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.etc_etn",
+      "area": "fisco",
+      "title": "ETC ed ETN: trattamento fiscale",
+      "summary": "ETC ed ETN sono in genere trattati come strumenti che generano redditi diversi (compensabili con le minusvalenze), a differenza degli ETF armonizzati. Conoscenza generale non verificata in questa ricerca: conferma con il broker.",
+      "applies_to": ["etc_etn"],
+      "verification": "da_verificare",
+      "source": {"label": "Agenzia delle Entrate", "url": "https://www.agenziaentrate.gov.it/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.minusvalenze",
+      "area": "fisco",
+      "title": "Minusvalenze: riporto per 4 anni",
+      "summary": "Le minusvalenze su redditi diversi si portano in compensazione nei 4 periodi d'imposta successivi a quello di realizzo. Le perdite del 2022 hanno come ultimo anno utile il 2026.",
+      "applies_to": ["azione", "etf_ucits", "etc_etn", "obbl_corporate"],
+      "verification": "secondaria",
+      "source": {"label": "Doppio Minimo - Minusvalenze in scadenza", "url": "https://www.doppiominimo.com/minusvalenze-in-scadenza-come-recuperarle-31-dicembre/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.bollo",
+      "area": "fisco",
+      "title": "Imposta di bollo 0,2% annuo",
+      "summary": "Sul valore dei prodotti finanziari in custodia si paga lo 0,2% annuo, anche senza vendere. Se la custodia è presso un intermediario italiano la trattiene lui.",
+      "applies_to": ["azione", "etf_ucits", "etc_etn", "obbl_corporate", "titolo_stato", "fondo"],
+      "verification": "secondaria",
+      "source": {"label": "Gestione del Denaro - Tassazione degli investimenti 2026", "url": "https://www.gestionedeldenaro.it/tassazione-degli-investimenti-2026/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.regimi",
+      "area": "fisco",
+      "title": "Regime amministrato e regime dichiarativo",
+      "summary": "Con un intermediario italiano (regime amministrato) calcola e versa le imposte lui. Con un broker estero sei in regime dichiarativo: dichiari redditi e attività estere e versi le imposte tu.",
+      "applies_to": ["azione", "etf_ucits", "etc_etn", "obbl_corporate", "titolo_stato", "fondo", "cripto"],
+      "verification": "secondaria",
+      "source": {"label": "Agenzia delle Entrate - IVAFE", "url": "https://www.agenziaentrate.gov.it/portale/schede/pagamenti/imposta-valore-att-estero-ivafe/cosa-ivafe"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "dichiarazione.rw_ivafe",
+      "area": "dichiarazione",
+      "title": "Quadro RW e IVAFE per attività all'estero",
+      "summary": "Gli strumenti presso broker non italiani vanno indicati nel Quadro RW anche senza operazioni nell'anno; IVAFE 0,2% se il bollo non è già applicato da un intermediario italiano. Sanzioni segnalate: 3%-15% dell'importo non dichiarato. Per i conti correnti esteri l'obbligo non scatta se il saldo massimo non supera 15.000 euro.",
+      "applies_to": ["azione", "etf_ucits", "etc_etn", "obbl_corporate", "titolo_stato", "fondo", "cripto"],
+      "verification": "secondaria",
+      "source": {"label": "Agenzia delle Entrate - IVAFE: che cos'e'", "url": "https://www.agenziaentrate.gov.it/portale/schede/pagamenti/imposta-valore-att-estero-ivafe/cosa-ivafe"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.cripto",
+      "area": "fisco",
+      "title": "Cripto-attività: 33% dal 2026",
+      "summary": "Le plusvalenze su cripto-attività sono tassate al 33% dal 1 gennaio 2026 (prima 26%) e la franchigia di 2.000 euro è stata eliminata. Resta il 26% per i token di moneta elettronica in euro conformi a MiCAR (L. 207/2024 e L. 199/2025). Molte guide online sono ferme alle bozze.",
+      "applies_to": ["cripto"],
+      "verification": "secondaria",
+      "source": {"label": "Agenda Digitale - Tassazione criptovalute con la legge di bilancio 2026", "url": "https://www.agendadigitale.eu/cultura-digitale/tassazione-criptovalute-cosa-cambia-con-la-legge-di-bilancio-2026/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.riforma_etf",
+      "area": "fisco",
+      "title": "Possibile riforma della tassazione degli ETF",
+      "summary": "Alcune fonti ipotizzano l'equiparazione degli ETF ai redditi diversi, ma ad oggi non risulta in vigore. Controlla ogni anno prima di decidere in base alla compensazione delle minusvalenze.",
+      "applies_to": ["etf_ucits"],
+      "verification": "da_verificare",
+      "source": {"label": "Moneyviz - Tassazione ETF 2026", "url": "https://blog.moneyviz.it/tassazione-etf-2026-plusvalenze-minusvalenze-730-modello-redditi/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.isee",
+      "area": "fisco",
+      "title": "Effetti sull'ISEE",
+      "summary": "Titoli di Stato e buoni postali sono esclusi dal patrimonio mobiliare ISEE fino a 50.000 euro per nucleo; l'eccedenza conta. ETF, azioni e obbligazioni private restano nel patrimonio mobiliare. Il riferimento normativo è discordante tra le fonti.",
+      "applies_to": ["azione", "etf_ucits", "etc_etn", "obbl_corporate", "titolo_stato", "fondo", "cripto"],
+      "verification": "secondaria",
+      "source": {"label": "Informazione Fiscale - ISEE 2026 e titoli di Stato", "url": "https://www.informazionefiscale.it/isee-2026-dsu-buoni-postali-libretti-titoli-di-stato-non-dichiarati"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.ftt",
+      "area": "fisco",
+      "title": "Imposta sulle transazioni finanziarie (Tobin tax)",
+      "summary": "Sull'acquisto di azioni di società italiane con capitalizzazione superiore a 500 milioni di euro si paga lo 0,1% sui mercati regolamentati e lo 0,2% fuori mercato. Aliquote e soglia da confermare sulla fonte ufficiale.",
+      "applies_to": ["azione"],
+      "verification": "da_verificare",
+      "source": {"label": "Agenzia delle Entrate", "url": "https://www.agenziaentrate.gov.it/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.dividendi_esteri",
+      "area": "fisco",
+      "title": "Dividendi di società estere",
+      "summary": "Sui dividendi esteri si applica una ritenuta alla fonte (per gli USA di norma 15% con modulo W-8BEN, 30% senza) con credito d'imposta limitato in Italia. Da confermare caso per caso.",
+      "applies_to": ["azione"],
+      "verification": "da_verificare",
+      "source": {"label": "Agenzia delle Entrate", "url": "https://www.agenziaentrate.gov.it/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.pir",
+      "area": "fisco",
+      "title": "PIR: esenzione dopo 5 anni",
+      "summary": "I Piani Individuali di Risparmio prevedono esenzione sui rendimenti dopo 5 anni di detenzione, con limiti annui e complessivi diversi tra PIR ordinari e alternativi. Importi da verificare.",
+      "applies_to": ["azione", "etf_ucits", "fondo"],
+      "verification": "da_verificare",
+      "source": {"label": "Ministero dell'Economia e delle Finanze", "url": "https://www.mef.gov.it/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fisco.successione",
+      "area": "fisco",
+      "title": "Titoli di Stato e successione",
+      "summary": "I titoli del debito pubblico sono in genere esclusi dall'asse ereditario ai fini dell'imposta di successione. Da confermare sulla fonte ufficiale.",
+      "applies_to": ["titolo_stato"],
+      "verification": "da_verificare",
+      "source": {"label": "Agenzia delle Entrate", "url": "https://www.agenziaentrate.gov.it/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "reg.broker_abilitato",
+      "area": "regolamentazione",
+      "title": "Verifica che l'intermediario sia autorizzato",
+      "summary": "Controlla negli elenchi Consob e Banca d'Italia (o nel registro dell'autorità del Paese d'origine, per i broker UE con passaporto) che banca o broker siano abilitati, e che il sito non sia tra quelli oscurati dalla Consob.",
+      "applies_to": ["azione", "etf_ucits", "etc_etn", "obbl_corporate", "titolo_stato", "fondo", "cripto"],
+      "verification": "da_verificare",
+      "source": {"label": "Consob", "url": "https://www.consob.it/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "reg.kid_ucits",
+      "area": "regolamentazione",
+      "title": "KID e prodotti UCITS",
+      "summary": "Per i prodotti d'investimento al dettaglio il KID è obbligatorio: leggi indicatore di rischio, costi e orizzonte consigliato. Gli ETF domiciliati fuori dall'UE (per esempio USA) di norma non sono offerti ai clienti al dettaglio UE.",
+      "applies_to": ["etf_ucits", "etc_etn", "obbl_corporate", "fondo"],
+      "verification": "da_verificare",
+      "source": {"label": "Consob", "url": "https://www.consob.it/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "reg.profilatura",
+      "area": "regolamentazione",
+      "title": "Questionario MiFID e avvisi di inappropriatezza",
+      "summary": "Il broker ti profila (conoscenze, esperienza, obiettivi). Per i prodotti complessi può darti un avviso di inappropriatezza: non è un divieto, ma va letto.",
+      "applies_to": ["azione", "etf_ucits", "etc_etn", "obbl_corporate", "titolo_stato", "fondo"],
+      "verification": "da_verificare",
+      "source": {"label": "Diritto Bancario - Il servizio di consulenza in materia di investimenti", "url": "https://www.dirittobancario.it/art/il-servizio-di-consulenza-materia-di-investimenti/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "reg.tutele",
+      "area": "regolamentazione",
+      "title": "Tutele e reclami",
+      "summary": "Esistono sistemi di indennizzo per insolvenza dell'intermediario (Fondo Nazionale di Garanzia per i titoli, FITD per i depositi) e l'Arbitro per le Controversie Finanziarie della Consob per le liti con gli intermediari. Massimali e condizioni da verificare. Sulle cripto non c'è una tutela equivalente.",
+      "applies_to": ["azione", "etf_ucits", "etc_etn", "obbl_corporate", "titolo_stato", "fondo", "cripto"],
+      "verification": "da_verificare",
+      "source": {"label": "Consob", "url": "https://www.consob.it/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "reg.cripto_mica",
+      "area": "regolamentazione",
+      "title": "Cripto: MiCA e comunicazioni DAC8",
+      "summary": "In UE i fornitori di servizi su cripto-attività devono essere autorizzati secondo MiCA. Dal 2026 sono previste comunicazioni DAC8 dei fornitori alle autorità fiscali. Dettagli da verificare.",
+      "applies_to": ["cripto"],
+      "verification": "da_verificare",
+      "source": {"label": "Centro Fiscale - Criptovalute 2026: tassazione, MiCA e DAC8", "url": "https://centrofiscale.com/criptovalute-2026-guida-fiscale/"},
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "reg.consulenza_riservata",
+      "area": "regolamentazione",
+      "title": "Questa dashboard non è consulenza",
+      "summary": "La consulenza in materia di investimenti, cioè una raccomandazione personalizzata a un cliente, è un'attività riservata (TUF art. 1 c. 5-septies). Questo strumento è personale, mostra scenari e osservazioni generali e non emette ordini di acquisto o vendita.",
+      "applies_to": ["azione", "etf_ucits", "etc_etn", "obbl_corporate", "titolo_stato", "fondo", "cripto"],
+      "verification": "secondaria",
+      "source": {"label": "Diritto Bancario - Il servizio di consulenza in materia di investimenti", "url": "https://www.dirittobancario.it/art/il-servizio-di-consulenza-materia-di-investimenti/"},
+      "last_verified": "2026-11-21"
+    }
+  ],
+  "checklists": [
+    {
+      "id": "azione",
+      "title": "Azioni",
+      "steps": [
+        {"text": "Verifica che banca o broker siano autorizzati e dove sono custoditi i titoli (Italia o estero).", "rules": ["reg.broker_abilitato", "fisco.regimi"]},
+        {"text": "Rispondi onestamente al questionario MiFID e leggi eventuali avvisi.", "rules": ["reg.profilatura"]},
+        {"text": "Somma i costi: commissioni, spread, bollo 0,2% e, per azioni italiane grandi, imposta sulle transazioni.", "rules": ["fisco.bollo", "fisco.ftt"]},
+        {"text": "Capisci come sono tassati dividendi e plusvalenze e come si usano le minusvalenze.", "rules": ["fisco.aliquote_base", "fisco.redditi_diversi", "fisco.minusvalenze"]},
+        {"text": "Se la società è estera, verifica la ritenuta sui dividendi e i moduli richiesti dal broker.", "rules": ["fisco.dividendi_esteri"]},
+        {"text": "Se il broker è estero, prepara Quadro RW e IVAFE.", "rules": ["dichiarazione.rw_ivafe"]},
+        {"text": "Valuta quanto pesa la singola azione sul tuo patrimonio e l'effetto sull'ISEE.", "rules": ["fisco.isee"]},
+        {"text": "Sai a chi rivolgerti in caso di problemi con l'intermediario.", "rules": ["reg.tutele"]}
+      ]
+    },
+    {
+      "id": "etf_ucits",
+      "title": "ETF e fondi indicizzati armonizzati (UCITS)",
+      "steps": [
+        {"text": "Verifica che banca o broker siano autorizzati e dove sono custoditi i titoli (Italia o estero).", "rules": ["reg.broker_abilitato", "fisco.regimi"]},
+        {"text": "Leggi il KID: rischio, costi, orizzonte. Verifica che l'ETF sia UCITS e non domiciliato fuori dall'UE.", "rules": ["reg.kid_ucits"]},
+        {"text": "Somma i costi: TER, spread, commissioni del broker, bollo 0,2%.", "rules": ["fisco.bollo"]},
+        {"text": "Ricorda che il guadagno è reddito di capitale: non si compensa con le minusvalenze.", "rules": ["fisco.aliquote_base", "fisco.etf_redditi_capitale", "fisco.minusvalenze"]},
+        {"text": "Controlla come viene trattata la quota di titoli pubblici e se ci sono riforme in arrivo.", "rules": ["fisco.etf_quota_titoli_pubblici", "fisco.riforma_etf"]},
+        {"text": "Valuta se il prodotto è ammissibile in un PIR.", "rules": ["fisco.pir"]},
+        {"text": "Se il broker è estero, prepara Quadro RW e IVAFE.", "rules": ["dichiarazione.rw_ivafe"]},
+        {"text": "Controlla l'effetto sull'ISEE e le tutele disponibili.", "rules": ["fisco.isee", "reg.tutele"]}
+      ]
+    },
+    {
+      "id": "etc_etn",
+      "title": "ETC ed ETN (oro, materie prime)",
+      "steps": [
+        {"text": "Verifica che banca o broker siano autorizzati e dove sono custoditi i titoli.", "rules": ["reg.broker_abilitato", "fisco.regimi"]},
+        {"text": "Leggi KID e prospetto: struttura, rischio dell'emittente (negli ETN) e collaterale.", "rules": ["reg.kid_ucits"]},
+        {"text": "Capisci la tassazione come redditi diversi e le minusvalenze.", "rules": ["fisco.aliquote_base", "fisco.etc_etn", "fisco.minusvalenze"]},
+        {"text": "Somma i costi, compreso il bollo 0,2%.", "rules": ["fisco.bollo"]},
+        {"text": "Se il broker è estero, prepara Quadro RW e IVAFE.", "rules": ["dichiarazione.rw_ivafe"]}
+      ]
+    },
+    {
+      "id": "obbl_corporate",
+      "title": "Obbligazioni societarie",
+      "steps": [
+        {"text": "Verifica che banca o broker siano autorizzati e dove sono custoditi i titoli.", "rules": ["reg.broker_abilitato", "fisco.regimi"]},
+        {"text": "Leggi prospetto e KID: emittente, rating, subordinazione, scadenza, lotto minimo.", "rules": ["reg.kid_ucits"]},
+        {"text": "Cedole e plusvalenze sono tassate al 26%, con le regole dei redditi diversi sulle plusvalenze.", "rules": ["fisco.aliquote_base", "fisco.redditi_diversi", "fisco.minusvalenze"]},
+        {"text": "Somma i costi, compreso il bollo 0,2%.", "rules": ["fisco.bollo"]},
+        {"text": "Se il broker è estero, prepara Quadro RW e IVAFE.", "rules": ["dichiarazione.rw_ivafe"]},
+        {"text": "Controlla l'effetto sull'ISEE e le tutele disponibili.", "rules": ["fisco.isee", "reg.tutele"]}
+      ]
+    },
+    {
+      "id": "titolo_stato",
+      "title": "Titoli di Stato (BTP, BOT, CCT)",
+      "steps": [
+        {"text": "Scegli dove comprare (banca, broker, Poste) e verifica che sia autorizzato.", "rules": ["reg.broker_abilitato", "fisco.regimi"]},
+        {"text": "Cedole e plusvalenze sono tassate al 12,5%.", "rules": ["fisco.titoli_stato"]},
+        {"text": "Considera il bollo 0,2% sul controvalore in custodia.", "rules": ["fisco.bollo"]},
+        {"text": "Verifica l'effetto sull'ISEE (esclusione fino a 50.000 euro per nucleo).", "rules": ["fisco.isee"]},
+        {"text": "Considera il trattamento in successione.", "rules": ["fisco.successione"]},
+        {"text": "Se il broker è estero, prepara Quadro RW e IVAFE.", "rules": ["dichiarazione.rw_ivafe"]}
+      ]
+    },
+    {
+      "id": "fondo",
+      "title": "Fondi comuni e fondi pensione",
+      "steps": [
+        {"text": "Verifica che la società di gestione e il collocatore siano autorizzati.", "rules": ["reg.broker_abilitato"]},
+        {"text": "Leggi il KID: costi di sottoscrizione, gestione e performance, orizzonte.", "rules": ["reg.kid_ucits"]},
+        {"text": "Capisci la tassazione dei proventi e delle plusvalenze come redditi di capitale.", "rules": ["fisco.aliquote_base", "fisco.etf_redditi_capitale"]},
+        {"text": "Valuta PIR e agevolazioni previste dal prodotto.", "rules": ["fisco.pir"]},
+        {"text": "Considera il bollo e, se all'estero, Quadro RW e IVAFE.", "rules": ["fisco.bollo", "dichiarazione.rw_ivafe"]}
+      ]
+    },
+    {
+      "id": "cripto",
+      "title": "Cripto-attività",
+      "steps": [
+        {"text": "Usa solo fornitori autorizzati MiCA e verifica chi custodisce le chiavi.", "rules": ["reg.cripto_mica", "reg.broker_abilitato"]},
+        {"text": "Plusvalenze al 33% dal 2026, senza franchigia; 26% per i token di moneta elettronica in euro conformi a MiCAR.", "rules": ["fisco.cripto"]},
+        {"text": "Dichiara le cripto detenute all'estero o su piattaforme non italiane.", "rules": ["dichiarazione.rw_ivafe", "fisco.regimi"]},
+        {"text": "Sii consapevole della volatilità e dell'assenza di un sistema di indennizzo equivalente a quello dei titoli.", "rules": ["reg.tutele"]},
+        {"text": "Controlla l'effetto sull'ISEE.", "rules": ["fisco.isee"]}
+      ]
+    }
+  ]
+}

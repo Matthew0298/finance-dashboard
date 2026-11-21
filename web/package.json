@@ -1,0 +1,6 @@
+{
+  "name": "finance-dashboard-web",
+  "private": true,
+  "type": "module",
+  "description": "Marker per far trattare i file .js come moduli ES anche in node --test. Non pubblicato sul sito."
+}
