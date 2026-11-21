@@ -61,7 +61,7 @@ jobs:
       - name: Drop git metadata (a single path keeps the artifact root at store/)
         run: rm -rf store/.git
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: store
           path: store
@@ -85,7 +85,7 @@ jobs:
           path: store
       - name: Audit raw data (blocks on errors)
         run: python -m fd_pipeline audit --stage raw --store store --out build/site
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: site-raw
@@ -114,7 +114,7 @@ jobs:
           path: build/site
       - name: Signals, scenario cones, calibration
         run: python -m fd_pipeline forecast --store store --out build/site
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: site-forecast
           path: build/site
@@ -142,7 +142,7 @@ jobs:
           path: build/site
       - name: Audit outputs (blocks on errors)
         run: python -m fd_pipeline audit --stage output --store store --out build/site
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: site-audited
