@@ -2,6 +2,8 @@
 
 Dashboard personale sulle finanze: mercati e scenari probabilistici, portafoglio che resta sul tuo dispositivo e una sezione **Fisco e burocrazia** con tutto ciò che serve sapere in Italia prima di investire in azioni, ETF, obbligazioni, titoli di Stato, fondi o cripto. Costo zero: GitHub Pages + GitHub Actions.
 
+**Sito online: <https://matthew0298.github.io/finance-dashboard/>** (aggiornato ogni giorno lavorativo dalla pipeline)
+
 > **Non è consulenza finanziaria né fiscale.** Mostra scenari e osservazioni generali; non emette ordini di acquisto o vendita (vedi [ADR-0003](docs/adr/0003-previsioni-probabilistiche-non-consulenza.md)). Le regole fiscali sono marcate con livello di verifica e data: vanno controllate su fonti ufficiali.
 
 ## Cosa fa
@@ -64,4 +66,4 @@ Il workflow `ci.yml` esegue test, privacy guard e una prova completa su dati sin
 
 ## Stato
 
-Rilascio M0 (fondazioni). Verificato in locale il 21/11/2026: 56 test Python, 33 test JavaScript, pipeline completa sia su dati sintetici sia su **dati reali** (10 strumenti da Yahoo Finance + cambi BCE, audit `pass`), sito provato nel browser. **Non ancora provato**: l'esecuzione dei workflow su GitHub (sintassi YAML validata, mai eseguiti) e il comportamento dello `schedule` nel tempo. Vedi la [roadmap](docs/03-roadmap.md).
+Rilascio M0 (fondazioni). Verificato in locale il 21/11/2026: 56 test Python, 33 test JavaScript, pipeline completa sia su dati sintetici sia su **dati reali** (10 strumenti da Yahoo Finance + cambi BCE, audit `pass`), sito provato nel browser. I workflow hanno girato con successo su GitHub (CI e pipeline completa, con deploy su Pages e dati reali). **Non ancora osservato**: il comportamento dello `schedule` nel tempo (esecuzione automatica giornaliera, eventuale sospensione dopo 60 giorni di inattività). Vedi la [roadmap](docs/03-roadmap.md).
