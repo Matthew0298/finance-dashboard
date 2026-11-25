@@ -1,51 +1,51 @@
 {
  "provider": "yahoo",
- "run_at": "2026-11-24T03:26:46+00:00",
+ "run_at": "2026-11-25T01:31:49+00:00",
  "instruments": {
   "SWDA": {
    "ok": true,
    "rows": 1521,
-   "new_rows": 0
+   "new_rows": 1
   },
   "VWCE": {
    "ok": true,
    "rows": 1521,
-   "new_rows": 0
+   "new_rows": 1
   },
   "CSSPX": {
    "ok": true,
    "rows": 1521,
-   "new_rows": 0
+   "new_rows": 1
   },
   "EIMI": {
    "ok": true,
    "rows": 1521,
-   "new_rows": 0
+   "new_rows": 1
   },
   "SEGA": {
    "ok": true,
    "rows": 1521,
-   "new_rows": 0
+   "new_rows": 1
   },
   "SGLD": {
    "ok": true,
    "rows": 1521,
-   "new_rows": 0
+   "new_rows": 1
   },
   "ENEL": {
    "ok": true,
    "rows": 1523,
-   "new_rows": 0
+   "new_rows": 1
   },
   "ISP": {
    "ok": true,
    "rows": 1523,
-   "new_rows": 0
+   "new_rows": 1
   },
   "AAPL": {
    "ok": true,
-   "rows": 1505,
-   "new_rows": 1
+   "rows": 1504,
+   "new_rows": 0
   },
   "BTC": {
    "ok": true,
@@ -55,7 +55,7 @@
  },
  "fx": {
   "ok": true,
-  "asof": "2026-11-23",
+  "asof": "2026-11-24",
   "currencies": [
    "USD"
   ]
