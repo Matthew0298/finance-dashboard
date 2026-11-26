@@ -1,6 +1,6 @@
 {
  "provider": "yahoo",
- "run_at": "2026-11-25T01:31:49+00:00",
+ "run_at": "2026-11-26T01:06:34+00:00",
  "instruments": {
   "SWDA": {
    "ok": true,
@@ -44,8 +44,8 @@
   },
   "AAPL": {
    "ok": true,
-   "rows": 1504,
-   "new_rows": 0
+   "rows": 1505,
+   "new_rows": 1
   },
   "BTC": {
    "ok": true,
@@ -55,7 +55,7 @@
  },
  "fx": {
   "ok": true,
-  "asof": "2026-11-24",
+  "asof": "2026-11-25",
   "currencies": [
    "USD"
   ]
